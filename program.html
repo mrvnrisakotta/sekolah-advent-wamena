@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html class="light scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>WAMENA ADVENTIST SCHOOL | Program Pendidikan</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00113a",
+            "primary-container": "#002366",
+            secondary: "#6c5e00",
+            "secondary-container": "#fee010",
+            "on-secondary-container": "#716300",
+            tertiary: "#031427",
+            "tertiary-container": "#19293d",
+            background: "#f7f9fb",
+            surface: "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "surface-container": "#eceef0",
+            "surface-container-high": "#e6e8ea",
+            "on-surface": "#191c1e",
+            "on-surface-variant": "#444650",
+            outline: "#757682",
+            "outline-variant": "#c5c6d2"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "1.0rem",
+            "2xl": "1.0rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            sans: ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Hanken Grotesk', sans-serif; background-color: #f7f9fb; }
+    .nav-link-active { color: #fee010 !important; font-weight: 700; }
+  </style>
+</head>
+<body class="text-on-surface min-h-screen flex flex-col pt-20">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#00113a] text-white h-20 shadow-md">
+    <div class="max-w-[1280px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <button class="md:hidden p-2 text-white hover:bg-primary-container rounded-[8px]" onclick="toggleDrawer()">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+            <span class="material-symbols-outlined font-fill-1 text-2xl">school</span>
+          </div>
+          <div>
+            <h1 class="font-extrabold text-sm md:text-base tracking-tight leading-none text-white">WAMENA ADVENTIST</h1>
+            <p class="text-[10px] text-slate-300 font-semibold tracking-wider uppercase">School of Excellence</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8 font-semibold text-[15px]">
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="index.html">Beranda</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="profil.html">Profil</a>
+        <a class="nav-link-active text-white hover:text-secondary-container transition-colors" href="program.html">Program</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="berita.html">Berita</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="galeri.html">Galeri</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="kontak.html">Kontak</a>
+        <a class="bg-secondary-container text-primary px-6 py-2.5 rounded-[8px] text-sm hover:brightness-105 active:scale-95 transition-all font-bold shadow-sm" href="kontak.html#form-daftar">Daftar Sekarang</a>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="fixed inset-0 z-[100] hidden" id="drawer">
+    <div class="absolute inset-0 bg-black/50" onclick="toggleDrawer()"></div>
+    <aside class="fixed inset-y-0 left-0 w-80 bg-[#00113a] text-white shadow-2xl flex flex-col p-6 transform -translate-x-full transition-transform duration-300 ease-out" id="drawer-aside">
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-primary-container">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">school</span>
+          </div>
+          <span class="font-bold text-lg text-white">Wamena Adventist</span>
+        </div>
+        <button class="p-2 text-slate-300 hover:bg-primary-container rounded-full" onclick="toggleDrawer()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      
+      <div class="flex flex-col gap-4 font-semibold text-lg">
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="index.html">Beranda</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="profil.html">Profil</a>
+        <a class="p-3 rounded-[8px] bg-primary-container text-secondary-container" href="program.html">Program</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="berita.html">Berita</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="galeri.html">Galeri</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="kontak.html">Kontak</a>
+      </div>
+      
+      <div class="mt-auto pt-6 border-t border-primary-container">
+        <a class="w-full text-center block bg-secondary-container text-primary py-3 rounded-[8px] font-bold shadow-sm" href="kontak.html#form-daftar">Daftar Sekarang</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="flex-grow">
+    
+    <!-- Page Header Banner -->
+    <section class="py-12 bg-gradient-to-r from-[#00113a] to-[#031427] text-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-[#fee010]">Jenjang & Metode Belajar</span>
+        <h1 class="text-3xl md:text-5xl font-extrabold mt-2 tracking-tight">Program Pendidikan</h1>
+        <p class="text-slate-300 text-sm md:text-base mt-2 max-w-xl">
+          Kami menyediakan pendidikan berjenjang dari Sekolah Dasar (PAUD, TK) (SD) hingga Sekolah Menengah Pertama (SMP) dengan dukungan fasilitas prima.
+        </p>
+      </div>
+    </section>
+
+    <!-- Detail Program Sekolah (Jenjang Pendidikan) -->
+    <section class="py-20 bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Jenjang</span>
+          <h2 class="text-3xl font-bold text-primary mt-2">Daftar Program Sekolah</h2>
+          <p class="text-on-surface-variant mt-3 text-sm md:text-base">
+            Setiap jenjang sekolah dikelola dengan keunggulan kurikulum, bimbingan kerohanian terarah, dan evaluasi rutin.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          <!-- SD Card -->
+          <div class="bg-[#f7f9fb] border border-slate-100 p-8 rounded-[16px] flex flex-col gap-6 shadow-sm">
+            <span class="material-symbols-outlined text-5xl text-primary font-fill-1">child_care</span>
+            <div>
+              <h3 class="text-2xl font-bold text-primary">Sekolah Dasar (SD)</h3>
+              <p class="text-[#435b9f] font-semibold text-xs mt-1">Akreditasi A | Kelas I - VI</p>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Membangun fondasi dasar anak-anak dalam keterampilan numerasi, literasi dasar, serta pembentukan karakter awal yang takut akan Tuhan. Pengenalan sains dasar dan bahasa Inggris dasar dilakukan melalui metode kreatif.
+            </p>
+            
+            <div class="border-t border-slate-200 pt-4 flex flex-col gap-3">
+              <h4 class="font-bold text-xs text-primary uppercase">Keunggulan Program SD:</h4>
+              <ul class="flex flex-col gap-2 text-xs text-on-surface-variant list-disc pl-4">
+                <li>Bimbingan membaca Alkitab harian untuk anak.</li>
+                <li>Metode bermain sambil belajar untuk kelas awal (Kelas 1-3).</li>
+                <li>Ekstrakurikuler pramuka, menggambar, dan paduan suara cilik.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- SMP Card -->
+          <div class="bg-[#f7f9fb] border border-slate-100 p-8 rounded-[16px] flex flex-col gap-6 shadow-sm">
+            <span class="material-symbols-outlined text-5xl text-primary font-fill-1">cast_for_education</span>
+            <div>
+              <h3 class="text-2xl font-bold text-primary">Sekolah Menengah Pertama (SMP)</h3>
+              <p class="text-[#435b9f] font-semibold text-xs mt-1">Akreditasi B | Kelas VII - IX</p>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Mempersiapkan remaja untuk berpikir kritis, kreatif, serta mandiri. Di jenjang ini, fokus diarahkan pada penguasaan teknologi informasi (TIK), sains tingkat menengah, kepemimpinan organisasi, serta pembinaan kerohanian mendalam.
+            </p>
+            
+            <div class="border-t border-slate-200 pt-4 flex flex-col gap-3">
+              <h4 class="font-bold text-xs text-primary uppercase">Keunggulan Program SMP:</h4>
+              <ul class="flex flex-col gap-2 text-xs text-on-surface-variant list-disc pl-4">
+                <li>Kelas praktik komputer dan pemrograman dasar.</li>
+                <li>Pelatihan kepemimpinan OSIS dan mentoring rohani.</li>
+                <li>Ekstrakurikuler olimpiade sains, olahraga basket/voli, dan musik angklung/band.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Program Per Semester -->
+    <section class="py-20 bg-background border-t border-slate-100">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Kalender Akademik</span>
+          <h2 class="text-3xl font-bold text-primary mt-2">Detail Program Setiap Semester</h2>
+          <p class="text-on-surface-variant mt-3 text-sm md:text-base">
+            Pembagian kegiatan sekolah per semester untuk menjamin keteraturan belajar siswa.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Semester Ganjil -->
+          <div class="bg-white border border-[#E2E8F0] p-6 rounded-[16px] shadow-sm flex flex-col gap-4">
+            <span class="bg-[#dbe1ff] text-[#00174a] text-xs font-bold px-3 py-1 rounded-full w-max">Semester 1 (Ganjil)</span>
+            <h4 class="font-bold text-primary text-lg">Juli - Desember</h4>
+            <ul class="flex flex-col gap-2.5 text-xs text-on-surface-variant list-decimal pl-4">
+              <li>Masa Pengenalan Lingkungan Sekolah (MPLS).</li>
+              <li>Ibadah Pembukaan Awal Tahun Ajaran Baru.</li>
+              <li>Pekan Sembahyang Semester I.</li>
+              <li>Ujian Tengah Semester (UTS) & Penilaian Akhir Semester (PAS).</li>
+              <li>Penerimaan Laporan Hasil Belajar (Rapor Semester I).</li>
+            </ul>
+          </div>
+          
+          <!-- Semester Genap -->
+          <div class="bg-white border border-[#E2E8F0] p-6 rounded-[16px] shadow-sm flex flex-col gap-4">
+            <span class="bg-[#dbe1ff] text-[#00174a] text-xs font-bold px-3 py-1 rounded-full w-max">Semester 2 (Genap)</span>
+            <h4 class="font-bold text-primary text-lg">Januari - Juni</h4>
+            <ul class="flex flex-col gap-2.5 text-xs text-on-surface-variant list-decimal pl-4">
+              <li>Pekan Sembahyang Semester II (Fokus Paskah).</li>
+              <li>Persiapan Ujian Akhir Sekolah untuk kelas akhir (SD Kelas 6, SMP Kelas 9).</li>
+              <li>Aksi Karya Bakti Sosial & Kunjungan Kasih.</li>
+              <li>Ujian Tengah Semester II & Penilaian Akhir Tahun (PAT).</li>
+              <li>Acara Tamatan/Graduasi Siswa & Pembagian Rapor Akhir Tahun.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Kurikulum & Fasilitas Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Kurikulum -->
+          <div class="lg:col-span-6 flex flex-col gap-6">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Kerangka Belajar</span>
+            <h2 class="text-3xl font-bold text-primary">Kurikulum Yang Diterapkan</h2>
+            <p class="text-on-surface-variant text-base leading-relaxed">
+              Kurikulum kami disusun secara integratif untuk mengembangkan potensi siswa secara menyeluruh (holistik). Kami menggunakan <strong>Kurikulum Merdeka</strong> yang telah diselaraskan dengan standar internasional dari Departemen Pendidikan Kristen Advent Sedunia.
+            </p>
+            
+            <div class="flex flex-col gap-4">
+              <div class="flex gap-4 items-start">
+                <span class="material-symbols-outlined text-primary font-fill-1">psychology_alt</span>
+                <div>
+                  <h4 class="font-bold text-primary text-sm">Pengembangan Kognitif (Pikiran)</h4>
+                  <p class="text-xs text-on-surface-variant mt-0.5">Siswa dilatih untuk kritis dalam menganalisis masalah riil.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span class="material-symbols-outlined text-primary font-fill-1">volunteer_activism</span>
+                <div>
+                  <h4 class="font-bold text-primary text-sm">Pembentukan Afektif (Karakter & Spiritual)</h4>
+                  <p class="text-xs text-on-surface-variant mt-0.5">Ibadah rutin, Pekan Sembahyang, dan bimbingan akhlak pastoral.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span class="material-symbols-outlined text-primary font-fill-1">sports_soccer</span>
+                <div>
+                  <h4 class="font-bold text-primary text-sm">Pengembangan Psikomotorik (Fisik)</h4>
+                  <p class="text-xs text-on-surface-variant mt-0.5">Program olahraga, seni, paduan suara, serta praktik kerajinan tangan lokal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fasilitas -->
+          <div class="lg:col-span-6 flex flex-col gap-6">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Sarana Pendukung</span>
+            <h2 class="text-3xl font-bold text-primary">Fasilitas Sekolah Kami</h2>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-[#f7f9fb] p-4 rounded-[12px] border border-slate-100 flex items-center gap-3">
+                <span class="material-symbols-outlined text-2xl text-primary">desktop_windows</span>
+                <span class="text-xs font-bold text-primary">Lab Komputer</span>
+              </div>
+              <div class="bg-[#f7f9fb] p-4 rounded-[12px] border border-slate-100 flex items-center gap-3">
+                <span class="material-symbols-outlined text-2xl text-primary">auto_stories</span>
+                <span class="text-xs font-bold text-primary">Perpustakaan</span>
+              </div>
+              <div class="bg-[#f7f9fb] p-4 rounded-[12px] border border-slate-100 flex items-center gap-3">
+                <span class="material-symbols-outlined text-2xl text-primary">science</span>
+                <span class="text-xs font-bold text-primary">Laboratorium IPA</span>
+              </div>
+              <div class="bg-[#f7f9fb] p-4 rounded-[12px] border border-slate-100 flex items-center gap-3">
+                <span class="material-symbols-outlined text-2xl text-primary">sports_basketball</span>
+                <span class="text-xs font-bold text-primary">Lapangan Olahraga</span>
+              </div>
+              <div class="bg-[#f7f9fb] p-4 rounded-[12px] border border-slate-100 flex items-center gap-3">
+                <span class="material-symbols-outlined text-2xl text-primary">church</span>
+                <span class="text-xs font-bold text-primary">Aula Kapel Ibadah</span>
+              </div>
+              <div class="bg-[#f7f9fb] p-4 rounded-[12px] border border-slate-100 flex items-center gap-3">
+                <span class="material-symbols-outlined text-2xl text-primary">wifi</span>
+                <span class="text-xs font-bold text-primary">Akses Internet Area</span>
+              </div>
+            </div>
+            
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Seluruh ruang kelas dilengkapi dengan pencahayaan optimal, sirkulasi udara pegunungan yang bersih, dan papan tulis representatif guna mendukung kenyamanan belajar setiap saat.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Pendaftaran CTA -->
+    <section class="py-16 bg-[#fee010] text-[#00113a] text-center border-t border-[#fee010]">
+      <div class="max-w-[800px] mx-auto px-6 flex flex-col gap-6 items-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Ingin Menyekolahkan Putra-Putri Anda di Sini?</h2>
+        <p class="text-sm md:text-base font-semibold leading-relaxed">
+          Jangan ragu untuk mengonsultasikan masa depan anak Anda bersama tim pengajar kami yang berdedikasi. Pendaftaran dibuka untuk SD dan SMP.
+        </p>
+        <a href="kontak.html#form-daftar" class="bg-[#00113a] text-white font-bold px-8 py-4 rounded-[8px] hover:brightness-110 active:scale-95 transition-all text-[15px] shadow-md">
+          Mulai Pendaftaran Online &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-12 border-t border-primary-container">
+    <div class="max-w-[1280px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-lg">school</span>
+        </div>
+        <span class="font-bold tracking-tight text-white">WAMENA ADVENTIST SCHOOL</span>
+      </div>
+
+      <p class="text-xs text-center text-slate-300">
+        &copy; 2026 Wamena Adventist School. Seluruh hak cipta dilindungi.
+      </p>
+
+      <div class="flex gap-4 text-xs font-semibold">
+        <a href="profil.html" class="hover:underline text-slate-300">Profil</a>
+        <span class="text-slate-600">|</span>
+        <a href="program.html" class="hover:underline text-slate-300">Program</a>
+        <span class="text-slate-600">|</span>
+        <a href="berita.html" class="hover:underline text-slate-300">Berita</a>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById('drawer');
+      const drawerAside = document.getElementById('drawer-aside');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        setTimeout(() => { drawerAside.classList.remove('-translate-x-full'); }, 10);
+      } else {
+        drawerAside.classList.add('-translate-x-full');
+        setTimeout(() => { drawer.classList.add('hidden'); }, 300);
+      }
+    }
+  </script>
+</body>
+</html>

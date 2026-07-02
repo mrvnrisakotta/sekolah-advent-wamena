@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html class="light scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>WAMENA ADVENTIST SCHOOL | Beranda</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00113a",
+            "primary-container": "#002366",
+            secondary: "#6c5e00",
+            "secondary-container": "#fee010",
+            "on-secondary-container": "#716300",
+            tertiary: "#031427",
+            "tertiary-container": "#19293d",
+            background: "#f7f9fb",
+            surface: "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "surface-container": "#eceef0",
+            "surface-container-high": "#e6e8ea",
+            "on-surface": "#191c1e",
+            "on-surface-variant": "#444650",
+            outline: "#757682",
+            "outline-variant": "#c5c6d2"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",       /* 8px radius */
+            xl: "1.0rem",       /* 16px radius */
+            "2xl": "1.0rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            sans: ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Hanken Grotesk', sans-serif; background-color: #f7f9fb; }
+    .nav-link-active { color: #fee010 !important; font-weight: 700; }
+  </style>
+</head>
+<body class="text-on-surface min-h-screen flex flex-col pt-20">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#00113a] text-white h-20 shadow-md">
+    <div class="max-w-[1280px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <button class="md:hidden p-2 text-white hover:bg-primary-container rounded-[8px]" onclick="toggleDrawer()">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="../beranda_wamena_adventist_school/code.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+            <span class="material-symbols-outlined font-fill-1 text-2xl">school</span>
+          </div>
+          <div>
+            <h1 class="font-extrabold text-sm md:text-base tracking-tight leading-none text-white">WAMENA ADVENTIST</h1>
+            <p class="text-[10px] text-slate-300 font-semibold tracking-wider uppercase">School of Excellence</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8 font-semibold text-[15px]">
+        <a class="nav-link-active text-white hover:text-secondary-container transition-colors" href="../beranda_wamena_adventist_school/code.html">Beranda</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="../profil_wamena_adventist_school/code.html">Profil</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="../program_pendidikan_wamena_adventist_school/code.html">Program</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="../berita_pengumuman_wamena_adventist_school/code.html">Berita</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="../galeri_wamena_adventist_school/code.html">Galeri</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="../kontak_wamena_adventist_school/code.html">Kontak</a>
+        <a class="bg-secondary-container text-primary px-6 py-2.5 rounded-[8px] text-sm hover:brightness-105 active:scale-95 transition-all font-bold shadow-sm" href="kontak.html#form-daftar">Daftar Sekarang</a>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="fixed inset-0 z-[100] hidden" id="drawer">
+    <div class="absolute inset-0 bg-black/50" onclick="toggleDrawer()"></div>
+    <aside class="fixed inset-y-0 left-0 w-80 bg-[#00113a] text-white shadow-2xl flex flex-col p-6 transform -translate-x-full transition-transform duration-300 ease-out" id="drawer-aside">
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-primary-container">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">school</span>
+          </div>
+          <span class="font-bold text-lg text-white">Wamena Adventist</span>
+        </div>
+        <button class="p-2 text-slate-300 hover:bg-primary-container rounded-full" onclick="toggleDrawer()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      
+      <div class="flex flex-col gap-4 font-semibold text-lg">
+        <a class="p-3 rounded-[8px] bg-primary-container text-secondary-container" href="../beranda_wamena_adventist_school/code.html">Beranda</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="../profil_wamena_adventist_school/code.html">Profil</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="../program_pendidikan_wamena_adventist_school/code.html">Program</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="../berita_pengumuman_wamena_adventist_school/code.html">Berita</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="../galeri_wamena_adventist_school/code.html">Galeri</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="../kontak_wamena_adventist_school/code.html">Kontak</a>
+      </div>
+      
+      <div class="mt-auto pt-6 border-t border-primary-container">
+        <a class="w-full text-center block bg-secondary-container text-primary py-3 rounded-[8px] font-bold shadow-sm" href="kontak.html#form-daftar">Daftar Sekarang</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="flex-grow">
+    
+    <!-- Hero Section -->
+    <section class="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-[#00113a] to-[#031427] text-white">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(67,91,159,0.3),transparent_60%)] pointer-events-none"></div>
+      
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 flex flex-col gap-6 text-left">
+            <span class="inline-flex items-center gap-2 bg-[#fee010]/20 text-[#fee010] border border-[#fee010]/30 px-4 py-1.5 rounded-full text-sm font-bold max-w-fit uppercase tracking-wider">
+              Tahun Ajaran Baru 2026/2027
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+              Mendidik Karakter Mulia & <span class="text-[#fee010]">Unggul Akademis</span>
+            </h1>
+            <p class="text-slate-300 text-lg leading-relaxed max-w-xl">
+              Selamat datang di Wamena Adventist School. Sekolah Kristen Advent Hari Ketujuh yang berkomitmen tinggi menghadirkan pendidikan holistik demi masa depan cemerlang putra-putri Anda.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="kontak.html#form-daftar" class="bg-[#fee010] text-[#00113a] font-bold px-8 py-3.5 rounded-[8px] shadow-lg hover:brightness-105 active:scale-95 transition-all text-[15px]">
+                Daftar Sekarang
+              </a>
+              <a href="../profil_wamena_adventist_school/code.html" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-[8px] border border-white/20 active:scale-95 transition-all text-[15px]">
+                Pelajari Profil
+              </a>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-full max-w-[420px] h-[320px] rounded-[16px] overflow-hidden shadow-2xl border-4 border-white/10">
+              <div class="absolute inset-0 bg-gradient-to-tr from-primary to-transparent opacity-40"></div>
+              <div class="w-full h-full bg-slate-800 flex flex-col items-center justify-center p-8 text-center text-white">
+                <span class="material-symbols-outlined text-6xl text-[#fee010] mb-4">school</span>
+                <h3 class="text-xl font-bold">Wamena Adventist School</h3>
+                <p class="text-sm text-slate-300 mt-2">Mempersiapkan Siswa Menjadi Pemimpin yang Berintegritas dan Memiliki Karakter Kristiani yang Kuat.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Perkenalan Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 flex flex-col gap-6">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Tentang Kami</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-primary">Sekilas Mengenai Wamena Adventist School</h2>
+            <p class="text-on-surface-variant text-base leading-relaxed">
+              Wamena Adventist School adalah salah satu institusi pendidikan Advent terkemuka di wilayah pegunungan tengah Papua. Kami mengedepankan integrasi antara pencapaian akademis unggulan, kedisiplinan hidup, serta nilai-nilai spiritualitas Kristen yang kokoh.
+            </p>
+            <p class="text-on-surface-variant text-base leading-relaxed">
+              Kami mendidik siswa tidak hanya untuk sukses di dunia profesi secara intelektual, tetapi juga mempersiapkan mereka untuk memiliki kerohanian yang dewasa serta siap melayani sesama dalam kehidupan bermasyarakat.
+            </p>
+            <div>
+              <a href="../profil_wamena_adventist_school/code.html" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
+                Pelajari visi misi kami <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+            <div class="bg-[#f7f9fb] p-6 rounded-[16px] border border-slate-100 flex flex-col gap-3">
+              <span class="material-symbols-outlined text-3xl text-primary font-fill-1">verified_user</span>
+              <h4 class="font-bold text-primary text-lg">Terakreditasi</h4>
+              <p class="text-xs text-on-surface-variant">Memiliki kurikulum resmi nasional yang terakreditasi baik.</p>
+            </div>
+            <div class="bg-[#f7f9fb] p-6 rounded-[16px] border border-slate-100 flex flex-col gap-3">
+              <span class="material-symbols-outlined text-3xl text-primary font-fill-1">psychology</span>
+              <h4 class="font-bold text-primary text-lg">Karakter Mulia</h4>
+              <p class="text-xs text-on-surface-variant">Pendidikan berbasis etika dan nilai kerohanian Kristen.</p>
+            </div>
+            <div class="bg-[#f7f9fb] p-6 rounded-[16px] border border-slate-100 flex flex-col gap-3">
+              <span class="material-symbols-outlined text-3xl text-primary font-fill-1">military_tech</span>
+              <h4 class="font-bold text-primary text-lg">Berprestasi</h4>
+              <p class="text-xs text-on-surface-variant">Siswa kami aktif berprestasi di tingkat kabupaten dan provinsi.</p>
+            </div>
+            <div class="bg-[#f7f9fb] p-6 rounded-[16px] border border-slate-100 flex flex-col gap-3">
+              <span class="material-symbols-outlined text-3xl text-primary font-fill-1">groups</span>
+              <h4 class="font-bold text-primary text-lg">Komunitas Solid</h4>
+              <p class="text-xs text-on-surface-variant">Hubungan erat antara pengajar, orang tua, dan siswa.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Utama (Kegiatan Kerohanian) -->
+    <section class="py-20 bg-background border-t border-slate-100">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Pendidikan Holistik</span>
+          <h2 class="text-3xl font-bold text-primary mt-2">Program Pembinaan Kerohanian</h2>
+          <p class="text-on-surface-variant mt-3 text-sm md:text-base">
+            Sebagai sekolah berlandaskan nilai-nilai Kristen, kegiatan kerohanian adalah inti dari pembentukan karakter mulia setiap murid.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Program 1 -->
+          <div class="bg-white border border-[#E2E8F0] p-8 rounded-[16px] shadow-sm flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-[8px] bg-[#00113a]/5 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-3xl font-fill-1">menu_book</span>
+            </div>
+            <h4 class="text-xl font-bold text-primary">Ibadah Pagi & Renungan Harian</h4>
+            <p class="text-on-surface-variant text-[15px] leading-relaxed">
+              Memulai hari sekolah dengan doa bersama, membaca Alkitab, serta renungan pagi untuk membiasakan siswa meletakkan Tuhan sebagai landasan aktivitasnya.
+            </p>
+          </div>
+
+          <!-- Program 2 -->
+          <div class="bg-white border border-[#E2E8F0] p-8 rounded-[16px] shadow-sm flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-[8px] bg-[#00113a]/5 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-3xl font-fill-1">auto_awesome</span>
+            </div>
+            <h4 class="text-xl font-bold text-primary">Pekan Sembahyang (Week of Prayer)</h4>
+            <p class="text-on-surface-variant text-[15px] leading-relaxed">
+              Program khusus satu minggu sekali setiap semester yang diisi pembicara rohani untuk memperdalam iman dan memperbarui komitmen moral spiritual para siswa.
+            </p>
+          </div>
+
+          <!-- Program 3 -->
+          <div class="bg-white border border-[#E2E8F0] p-8 rounded-[16px] shadow-sm flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-[8px] bg-[#00113a]/5 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-3xl font-fill-1">volunteer_activism</span>
+            </div>
+            <h4 class="text-xl font-bold text-primary">Pelayanan Sosial & Bakti Masyarakat</h4>
+            <p class="text-on-surface-variant text-[15px] leading-relaxed">
+              Melatih kepedulian sosial siswa secara langsung dengan membantu sesama melalui kunjungan panti asuhan, aksi kebersihan lingkungan, dan pembagian sembako.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="text-center max-w-xl mx-auto mb-16">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Mengapa Kami?</span>
+          <h2 class="text-3xl font-bold text-primary mt-2">Pilar Keunggulan Sekolah</h2>
+          <p class="text-on-surface-variant mt-3 text-sm md:text-base">
+            Kami memastikan kualitas proses pendidikan diukur dari berbagai aspek pendukung utama.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Keunggulan 1 -->
+          <div class="bg-[#f7f9fb] p-8 rounded-[16px] flex flex-col gap-4 border border-slate-100">
+            <span class="material-symbols-outlined text-4xl text-primary font-fill-1">home_work</span>
+            <h4 class="text-lg font-bold text-primary">Fasilitas Memadai</h4>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Ruang kelas bersih, laboratorium komputer modern, perpustakaan dengan koleksi buku tepercaya, sarana olahraga lengkap, dan aula pertemuan representatif.
+            </p>
+          </div>
+          
+          <!-- Keunggulan 2 -->
+          <div class="bg-[#f7f9fb] p-8 rounded-[16px] flex flex-col gap-4 border border-slate-100">
+            <span class="material-symbols-outlined text-4xl text-primary font-fill-1">school</span>
+            <h4 class="text-lg font-bold text-primary">Pengajar Berkualitas</h4>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Guru dan staf kependidikan berpengalaman yang berkomitmen penuh, memiliki kompetensi sertifikasi pendidikan, serta peduli mendalam pada murid.
+            </p>
+          </div>
+          
+          <!-- Keunggulan 3 -->
+          <div class="bg-[#f7f9fb] p-8 rounded-[16px] flex flex-col gap-4 border border-slate-100">
+            <span class="material-symbols-outlined text-4xl text-primary font-fill-1">workspace_premium</span>
+            <h4 class="text-lg font-bold text-primary">Kurikulum Terintegrasi</h4>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              Mengintegrasikan Kurikulum Merdeka Nasional dengan kurikulum Advent global yang menekankan perkembangan spiritual, mental, sosial, dan fisik secara seimbang.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Berita Terbaru & Brosur -->
+    <section class="py-20 bg-background border-t border-slate-100">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Informasi Terkini</span>
+            <h2 class="text-3xl font-bold text-primary mt-2">Kabar & Pengumuman Sekolah</h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="../berita_pengumuman_wamena_adventist_school/code.html" class="text-sm font-bold text-primary hover:underline">Lihat Semua Berita &rarr;</a>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Card Berita 1 -->
+          <div class="bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col">
+            <div class="h-44 bg-primary flex items-center justify-center text-white text-3xl font-bold">
+              KABAR SEKOLAH
+            </div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="text-xs font-bold text-[#435b9f] uppercase">Pengumuman</span>
+              <h4 class="text-base font-bold text-primary leading-snug">Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Telah dibuka pendaftaran murid baru untuk jenjang SD dan SMP. Kuota terbatas, segera lakukan registrasi online.
+              </p>
+              <a href="../berita_pengumuman_wamena_adventist_school/code.html" class="mt-auto text-xs font-bold text-primary hover:underline">Baca Selengkapnya</a>
+            </div>
+          </div>
+
+          <!-- Card Berita 2 -->
+          <div class="bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col">
+            <div class="h-44 bg-teal-950 flex items-center justify-center text-white text-3xl font-bold">
+              KEGIATAN
+            </div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="text-xs font-bold text-[#435b9f] uppercase">Kegiatan</span>
+              <h4 class="text-base font-bold text-primary leading-snug">Aksi Sosial dan Penanaman Pohon Bersama di Distrik Wamena</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Menumbuhkan rasa peduli lingkungan sejak dini, siswa-siswi melaksanakan aksi sosial penanaman bibit pohon.
+              </p>
+              <a href="../berita_pengumuman_wamena_adventist_school/code.html" class="mt-auto text-xs font-bold text-primary hover:underline">Baca Selengkapnya</a>
+            </div>
+          </div>
+
+          <!-- Card Berita 3 -->
+          <div class="bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col">
+            <div class="h-44 bg-slate-900 flex items-center justify-center text-white text-3xl font-bold">
+              PRESTASI
+            </div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="text-xs font-bold text-[#435b9f] uppercase">Prestasi</span>
+              <h4 class="text-base font-bold text-primary leading-snug">Siswa Wamena Adventist Sabet Juara 2 Cerdas Cermat Sains</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Kabar gembira, perwakilan tim sekolah berhasil membawa pulang piala dalam olimpiade sains tingkat kabupaten.
+              </p>
+              <a href="../berita_pengumuman_wamena_adventist_school/code.html" class="mt-auto text-xs font-bold text-primary hover:underline">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Download Brosur Section -->
+        <div class="bg-primary text-white p-8 md:p-12 rounded-[16px] shadow-lg flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="text-left">
+            <h3 class="text-2xl font-bold">Dapatkan Brosur Lengkap Sekolah</h3>
+            <p class="text-sm text-slate-300 mt-2">Unduh informasi lengkap mengenai biaya pendidikan, berkas persyaratan pendaftaran, dan rincian kegiatan ekstrakurikuler.</p>
+          </div>
+          <div>
+            <a href="#" onclick="alert('Mengunduh Brosur...'); return false;" class="bg-[#fee010] text-[#00113a] font-bold px-8 py-3.5 rounded-[8px] inline-flex items-center gap-2 hover:brightness-105 active:scale-95 transition-all text-sm">
+              <span class="material-symbols-outlined">download</span> Unduh Brosur (PDF)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Preview Galeri Kegiatan -->
+    <section class="py-20 bg-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Dokumentasi</span>
+            <h2 class="text-3xl font-bold text-primary mt-2">Galeri Foto Kegiatan</h2>
+          </div>
+          <div>
+            <a href="../galeri_wamena_adventist_school/code.html" class="text-sm font-bold text-primary hover:underline">Lihat Seluruh Galeri &rarr;</a>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Foto 1 -->
+          <div class="relative group h-48 bg-slate-800 rounded-[16px] overflow-hidden cursor-pointer" onclick="location.href='../galeri_wamena_adventist_school/code.html'">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center text-white font-bold text-sm">
+              Ibadah Kapel
+            </div>
+          </div>
+          
+          <!-- Foto 2 -->
+          <div class="relative group h-48 bg-slate-700 rounded-[16px] overflow-hidden cursor-pointer" onclick="location.href='../galeri_wamena_adventist_school/code.html'">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center text-white font-bold text-sm">
+              Praktikum IPA
+            </div>
+          </div>
+
+          <!-- Foto 3 -->
+          <div class="relative group h-48 bg-slate-900 rounded-[16px] overflow-hidden cursor-pointer" onclick="location.href='../galeri_wamena_adventist_school/code.html'">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center text-white font-bold text-sm">
+              Kegiatan Pramuka
+            </div>
+          </div>
+
+          <!-- Foto 4 -->
+          <div class="relative group h-48 bg-teal-950 rounded-[16px] overflow-hidden cursor-pointer" onclick="location.href='../galeri_wamena_adventist_school/code.html'">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center text-white font-bold text-sm">
+              Bakti Sosial
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Pendaftaran CTA -->
+    <section class="py-16 bg-[#fee010] text-[#00113a] text-center border-t border-[#fee010]">
+      <div class="max-w-[800px] mx-auto px-6 flex flex-col gap-6 items-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Siap Bergabung Bersama Kami?</h2>
+        <p class="text-sm md:text-base font-semibold leading-relaxed">
+          Proses pendaftaran siswa baru sangat mudah dan dapat diakses dari mana saja. Klik tombol di bawah ini untuk mengisi formulir pendaftaran online.
+        </p>
+        <a href="kontak.html#form-daftar" class="bg-[#00113a] text-white font-bold px-8 py-4 rounded-[8px] hover:brightness-110 active:scale-95 transition-all text-[15px] shadow-md">
+          Daftar Sekarang Secara Online &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Preview Kontak & Google Maps -->
+    <section class="py-20 bg-background">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <div class="lg:col-span-5 flex flex-col justify-between gap-6">
+            <div>
+              <span class="text-xs uppercase font-extrabold tracking-widest text-[#435b9f]">Informasi</span>
+              <h2 class="text-3xl font-bold text-primary mt-2">Hubungi Sekolah Kami</h2>
+              <p class="text-on-surface-variant text-sm mt-3 leading-relaxed">
+                Kami siap menyambut kehadiran Anda untuk konsultasi rencana masa depan anak Anda di sekolah kami.
+              </p>
+            </div>
+            
+            <div class="flex flex-col gap-4">
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-[8px] bg-primary text-white flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary text-sm">Alamat Lengkap</h4>
+                  <p class="text-xs text-on-surface-variant mt-0.5">Jl. Siliwangi No.12, Wamena, Papua Pegunungan</p>
+                </div>
+              </div>
+              
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-[8px] bg-primary text-white flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined">call</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary text-sm">Nomor Telepon</h4>
+                  <p class="text-xs text-on-surface-variant mt-0.5">+62 969-345-678</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-[8px] bg-primary text-white flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary text-sm">Surel Staf Admisi</h4>
+                  <p class="text-xs text-on-surface-variant mt-0.5">info@wamenaadventistschool.sch.id</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <a href="../kontak_wamena_adventist_school/code.html" class="bg-primary text-white font-bold px-6 py-3 rounded-[8px] hover:brightness-105 active:scale-95 transition-all text-xs inline-flex items-center gap-2">
+                Hubungi Kami di Halaman Kontak
+              </a>
+            </div>
+          </div>
+          
+          <!-- Mock Map -->
+          <div class="lg:col-span-7 h-[350px] md:h-auto rounded-[16px] overflow-hidden border border-slate-200 bg-white relative flex flex-col justify-end p-6">
+            <!-- Simulated Google Maps background -->
+            <div class="absolute inset-0 bg-slate-100 flex items-center justify-center text-slate-400">
+              <div class="text-center p-4">
+                <span class="material-symbols-outlined text-6xl text-primary mb-2 font-fill-1">map</span>
+                <p class="font-bold text-primary text-base">Google Maps Lokasi Sekolah</p>
+                <p class="text-xs mt-1 text-on-surface-variant">Jl. Siliwangi No.12, Wamena, Papua Pegunungan</p>
+              </div>
+            </div>
+            
+            <div class="relative z-10 bg-white p-4 rounded-[12px] shadow-md border border-slate-100 flex items-center justify-between gap-4">
+              <div>
+                <h4 class="font-bold text-primary text-sm">Wamena Adventist School</h4>
+                <p class="text-[11px] text-on-surface-variant mt-0.5">Buka Sen - Kam (07:30 - 14:00), Jum (07:30 - 11:30)</p>
+              </div>
+              <a href="https://maps.google.com" target="_blank" class="bg-secondary-container text-primary font-bold text-xs px-4 py-2 rounded-[8px]">Rute Jalan</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-12 border-t border-primary-container">
+    <div class="max-w-[1280px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-lg">school</span>
+        </div>
+        <span class="font-bold tracking-tight text-white">WAMENA ADVENTIST SCHOOL</span>
+      </div>
+
+      <p class="text-xs text-center text-slate-300">
+        &copy; 2026 Wamena Adventist School. Seluruh hak cipta dilindungi.
+      </p>
+
+      <div class="flex gap-4 text-xs font-semibold">
+        <a href="../profil_wamena_adventist_school/code.html" class="hover:underline text-slate-300">Profil</a>
+        <span class="text-slate-600">|</span>
+        <a href="../program_pendidikan_wamena_adventist_school/code.html" class="hover:underline text-slate-300">Program</a>
+        <span class="text-slate-600">|</span>
+        <a href="../berita_pengumuman_wamena_adventist_school/code.html" class="hover:underline text-slate-300">Berita</a>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById('drawer');
+      const drawerAside = document.getElementById('drawer-aside');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        setTimeout(() => { drawerAside.classList.remove('-translate-x-full'); }, 10);
+      } else {
+        drawerAside.classList.add('-translate-x-full');
+        setTimeout(() => { drawer.classList.add('hidden'); }, 300);
+      }
+    }
+  </script>
+</body>
+</html>

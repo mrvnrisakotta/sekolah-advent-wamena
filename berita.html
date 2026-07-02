@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html class="light scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>WAMENA ADVENTIST SCHOOL | Berita & Pengumuman</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00113a",
+            "primary-container": "#002366",
+            secondary: "#6c5e00",
+            "secondary-container": "#fee010",
+            "on-secondary-container": "#716300",
+            tertiary: "#031427",
+            "tertiary-container": "#19293d",
+            background: "#f7f9fb",
+            surface: "#ffffff",
+            "surface-container-low": "#f2f4f6",
+            "surface-container": "#eceef0",
+            "surface-container-high": "#e6e8ea",
+            "on-surface": "#191c1e",
+            "on-surface-variant": "#444650",
+            outline: "#757682",
+            "outline-variant": "#c5c6d2"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "1.0rem",
+            "2xl": "1.0rem",
+            full: "9999px"
+          },
+          fontFamily: {
+            sans: ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Hanken Grotesk', sans-serif; background-color: #f7f9fb; }
+    .nav-link-active { color: #fee010 !important; font-weight: 700; }
+    .active-filter { background-color: #00113a !important; color: #ffffff !important; }
+  </style>
+</head>
+<body class="text-on-surface min-h-screen flex flex-col pt-20">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#00113a] text-white h-20 shadow-md">
+    <div class="max-w-[1280px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <button class="md:hidden p-2 text-white hover:bg-primary-container rounded-[8px]" onclick="toggleDrawer()">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+            <span class="material-symbols-outlined font-fill-1 text-2xl">school</span>
+          </div>
+          <div>
+            <h1 class="font-extrabold text-sm md:text-base tracking-tight leading-none text-white">WAMENA ADVENTIST</h1>
+            <p class="text-[10px] text-slate-300 font-semibold tracking-wider uppercase">School of Excellence</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8 font-semibold text-[15px]">
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="index.html">Beranda</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="profil.html">Profil</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="program.html">Program</a>
+        <a class="nav-link-active text-white hover:text-secondary-container transition-colors" href="berita.html">Berita</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="galeri.html">Galeri</a>
+        <a class="text-slate-200 hover:text-secondary-container transition-colors" href="kontak.html">Kontak</a>
+        <a class="bg-secondary-container text-primary px-6 py-2.5 rounded-[8px] text-sm hover:brightness-105 active:scale-95 transition-all font-bold shadow-sm" href="kontak.html#form-daftar">Daftar Sekarang</a>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="fixed inset-0 z-[100] hidden" id="drawer">
+    <div class="absolute inset-0 bg-black/50" onclick="toggleDrawer()"></div>
+    <aside class="fixed inset-y-0 left-0 w-80 bg-[#00113a] text-white shadow-2xl flex flex-col p-6 transform -translate-x-full transition-transform duration-300 ease-out" id="drawer-aside">
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-primary-container">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">school</span>
+          </div>
+          <span class="font-bold text-lg text-white">Wamena Adventist</span>
+        </div>
+        <button class="p-2 text-slate-300 hover:bg-primary-container rounded-full" onclick="toggleDrawer()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      
+      <div class="flex flex-col gap-4 font-semibold text-lg">
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="index.html">Beranda</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="profil.html">Profil</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="program.html">Program</a>
+        <a class="p-3 rounded-[8px] bg-primary-container text-secondary-container" href="berita.html">Berita</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="galeri.html">Galeri</a>
+        <a class="p-3 rounded-[8px] text-slate-200 hover:bg-primary-container" href="kontak.html">Kontak</a>
+      </div>
+      
+      <div class="mt-auto pt-6 border-t border-primary-container">
+        <a class="w-full text-center block bg-secondary-container text-primary py-3 rounded-[8px] font-bold shadow-sm" href="kontak.html#form-daftar">Daftar Sekarang</a>
+      </div>
+    </aside>
+  </div>
+
+  <main class="flex-grow">
+    
+    <!-- Page Header Banner -->
+    <section class="py-12 bg-gradient-to-r from-[#00113a] to-[#031427] text-white">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-[#fee010]">Warta Terkini</span>
+        <h1 class="text-3xl md:text-5xl font-extrabold mt-2 tracking-tight">Berita & Pengumuman</h1>
+        <p class="text-slate-300 text-sm md:text-base mt-2 max-w-xl">
+          Temukan rilis pers resmi, agenda kegiatan, pengumuman akademis, serta liputan prestasi murid kami.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter & Search Section -->
+    <section class="py-8 bg-white border-b border-slate-100">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2" id="filter-btn-container">
+          <button class="filter-btn active-filter px-5 py-2 text-xs font-bold rounded-full transition-all border border-slate-200 bg-white text-on-surface-variant hover:text-primary" onclick="setFilter('all', this)">Semua</button>
+          <button class="filter-btn px-5 py-2 text-xs font-bold rounded-full transition-all border border-slate-200 bg-white text-on-surface-variant hover:text-primary" onclick="setFilter('pengumuman', this)">Pengumuman</button>
+          <button class="filter-btn px-5 py-2 text-xs font-bold rounded-full transition-all border border-slate-200 bg-white text-on-surface-variant hover:text-primary" onclick="setFilter('kegiatan', this)">Kegiatan</button>
+          <button class="filter-btn px-5 py-2 text-xs font-bold rounded-full transition-all border border-slate-200 bg-white text-on-surface-variant hover:text-primary" onclick="setFilter('prestasi', this)">Prestasi</button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative w-full md:w-80">
+          <input type="text" id="search-input" onkeyup="handleSearch()" class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-[8px] text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Cari berita...">
+          <span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-lg">search</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- News Grid List -->
+    <section class="py-16 bg-background">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="news-grid">
+          
+          <!-- Article 1 -->
+          <div class="news-item bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-all" data-category="pengumuman" onclick="openNewsModal('penerimaan-murid-baru')">
+            <div class="h-44 bg-gradient-to-r from-primary to-[#002366] flex items-center justify-center text-white text-3xl font-extrabold">PPDB</div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="bg-[#dbe1ff] text-[#00174a] text-[10px] font-bold px-2.5 py-1 rounded-full w-max uppercase">Pengumuman</span>
+              <h3 class="text-base font-bold text-primary leading-snug title-text">Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Telah dibuka pendaftaran murid baru untuk jenjang SD dan SMP. Proses seleksi berkas administrasi dan tes wawancara dilakukan terpadu.
+              </p>
+              <div class="mt-auto flex items-center justify-between text-[11px] text-[#435b9f] font-semibold pt-4 border-t border-slate-100">
+                <span>Staf Admisi</span>
+                <span>02 Juli 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="news-item bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-all" data-category="kegiatan" onclick="openNewsModal('aksi-sosial-penanaman-pohon')">
+            <div class="h-44 bg-emerald-950 flex items-center justify-center text-white text-3xl font-extrabold">LINGKUNGAN</div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="bg-[#dbe1ff] text-[#00174a] text-[10px] font-bold px-2.5 py-1 rounded-full w-max uppercase">Kegiatan</span>
+              <h3 class="text-base font-bold text-primary leading-snug title-text">Aksi Sosial dan Penanaman Pohon Bersama di Distrik Wamena</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Mendidik kepedulian lingkungan secara nyata, siswa-siswi melaksanakan aksi sosial penanaman bibit pohon buah di pinggiran Wamena.
+              </p>
+              <div class="mt-auto flex items-center justify-between text-[11px] text-[#435b9f] font-semibold pt-4 border-t border-slate-100">
+                <span>Kesiswaan</span>
+                <span>28 Juni 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="news-item bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-all" data-category="prestasi" onclick="openNewsModal('juara-cerdas-cermat')">
+            <div class="h-44 bg-amber-950 flex items-center justify-center text-white text-3xl font-extrabold">OLIMPIADE</div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="bg-[#dbe1ff] text-[#00174a] text-[10px] font-bold px-2.5 py-1 rounded-full w-max uppercase">Prestasi</span>
+              <h3 class="text-base font-bold text-primary leading-snug title-text">Siswa Wamena Adventist Sabet Juara 2 Cerdas Cermat Sains</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Tim sains SMP Kristen Advent berhasil merebut piala kejuaraan dalam lomba sains tingkat kabupaten yang diikuti puluhan sekolah.
+              </p>
+              <div class="mt-auto flex items-center justify-between text-[11px] text-[#435b9f] font-semibold pt-4 border-t border-slate-100">
+                <span>Humas</span>
+                <span>15 Juni 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="news-item bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-all" data-category="pengumuman" onclick="openNewsModal('jadwal-pembagian-rapor')">
+            <div class="h-44 bg-cyan-950 flex items-center justify-center text-white text-3xl font-extrabold">RAPOR</div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="bg-[#dbe1ff] text-[#00174a] text-[10px] font-bold px-2.5 py-1 rounded-full w-max uppercase">Pengumuman</span>
+              <h3 class="text-base font-bold text-primary leading-snug title-text">Jadwal Pembagian Rapor Semester Genap & Tamatan Siswa</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Diinfokan kepada seluruh orang tua siswa, pembagian rapor akhir tahun ajaran diselenggarakan pada tanggal 20 Juni 2026.
+              </p>
+              <div class="mt-auto flex items-center justify-between text-[11px] text-[#435b9f] font-semibold pt-4 border-t border-slate-100">
+                <span>Kurikulum</span>
+                <span>05 Juni 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="news-item bg-white border border-[#E2E8F0] rounded-[16px] overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-md transition-all" data-category="kegiatan" onclick="openNewsModal('ibadah-paduan-suara')">
+            <div class="h-44 bg-rose-950 flex items-center justify-center text-white text-3xl font-extrabold">IBADAH</div>
+            <div class="p-6 flex-grow flex flex-col gap-3">
+              <span class="bg-[#dbe1ff] text-[#00174a] text-[10px] font-bold px-2.5 py-1 rounded-full w-max uppercase">Kegiatan</span>
+              <h3 class="text-base font-bold text-primary leading-snug title-text">Pelayanan Paduan Suara Siswa di Gereja Advent Jemaat Wamena Kota</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Sebagai bagian pembinaan bakat seni rohani, tim paduan suara membawakan lagu pujian pada kebaktian hari Sabat.
+              </p>
+              <div class="mt-auto flex items-center justify-between text-[11px] text-[#435b9f] font-semibold pt-4 border-t border-slate-100">
+                <span>Kerohanian</span>
+                <span>24 Mei 2026</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- News Detail Modal -->
+  <div class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs" id="news-modal">
+    <div class="bg-white rounded-[16px] max-w-2xl w-full p-6 md:p-8 relative max-h-[85vh] overflow-y-auto">
+      <button class="absolute top-4 right-4 text-slate-400 hover:text-slate-600" onclick="closeNewsModal()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div id="modal-content" class="flex flex-col gap-4">
+        <!-- Content injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-12 border-t border-primary-container">
+    <div class="max-w-[1280px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-lg">school</span>
+        </div>
+        <span class="font-bold tracking-tight text-white">WAMENA ADVENTIST SCHOOL</span>
+      </div>
+
+      <p class="text-xs text-center text-slate-300">
+        &copy; 2026 Wamena Adventist School. Seluruh hak cipta dilindungi.
+      </p>
+
+      <div class="flex gap-4 text-xs font-semibold">
+        <a href="profil.html" class="hover:underline text-slate-300">Profil</a>
+        <span class="text-slate-600">|</span>
+        <a href="program.html" class="hover:underline text-slate-300">Program</a>
+        <span class="text-slate-600">|</span>
+        <a href="berita.html" class="hover:underline text-slate-300">Berita</a>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById('drawer');
+      const drawerAside = document.getElementById('drawer-aside');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        setTimeout(() => { drawerAside.classList.remove('-translate-x-full'); }, 10);
+      } else {
+        drawerAside.classList.add('-translate-x-full');
+        setTimeout(() => { drawer.classList.add('hidden'); }, 300);
+      }
+    }
+
+    // Category filtering
+    let currentFilter = 'all';
+    function setFilter(category, button) {
+      currentFilter = category;
+      // Toggle button classes
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active-filter'));
+      button.classList.add('active-filter');
+      
+      applyFilterAndSearch();
+    }
+
+    // Search bar filter
+    function handleSearch() {
+      applyFilterAndSearch();
+    }
+
+    function applyFilterAndSearch() {
+      const searchQuery = document.getElementById('search-input').value.toLowerCase();
+      const newsItems = document.querySelectorAll('.news-item');
+      
+      newsItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const itemTitle = item.querySelector('.title-text').textContent.toLowerCase();
+        
+        const matchesCategory = currentFilter === 'all' || itemCategory === currentFilter;
+        const matchesSearch = itemTitle.includes(searchQuery);
+        
+        if (matchesCategory && matchesSearch) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // News Modals Data
+    const articlesData = {
+      'penerimaan-murid-baru': {
+        title: 'Penerimaan Peserta Didik Baru (PPDB) TA 2026/2027',
+        category: 'Pengumuman',
+        date: '02 Juli 2026',
+        author: 'Staf Admisi',
+        body: 'Kami membuka pendaftaran online untuk tahun ajaran baru bagi jenjang Sekolah Dasar (SD) kelas I dan Sekolah Menengah Pertama (SMP) kelas VII. Berkas persyaratan wajib disiapkan seperti Akta Kelahiran, Kartu Keluarga, Rapor jenjang sebelumnya, dan pasfoto terbaru. Silakan akses pendaftaran melalui menu Hubungi Kami di bagian bawah halaman Beranda atau langsung mengisi formulir pendaftaran di halaman Kontak.'
+      },
+      'aksi-sosial-penanaman-pohon': {
+        title: 'Aksi Sosial dan Penanaman Pohon Bersama di Distrik Wamena',
+        category: 'Kegiatan',
+        date: '28 Juni 2026',
+        author: 'Kesiswaan',
+        body: 'Siswa-siswi sekolah bersama dengan para guru pengajar melaksanakan program kerja bakti sosial berupa pembersihan sampah plastik di area perkotaan Wamena, diakhiri dengan aksi penanaman bibit pohon pelindung dan buah. Kegiatan ini bertujuan mempererat kepedulian murid terhadap kelestarian alam ciptaan Tuhan di bumi Papua.'
+      },
+      'juara-cerdas-cermat': {
+        title: 'Siswa Wamena Adventist Sabet Juara 2 Cerdas Cermat Sains',
+        category: 'Prestasi',
+        date: '15 Juni 2026',
+        author: 'Humas',
+        body: 'Selamat dan sukses kepada perwakilan tim cerdas cermat sains sekolah kami yang berhasil meraih juara kedua dalam lomba cerdas cermat bidang Ilmu Pengetahuan Alam (IPA) tingkat SMP se-Kabupaten Jayawijaya. Prestasi ini membuktikan dedikasi tinggi siswa dalam menguasai sains diiringi disiplin belajar yang kuat.'
+      },
+      'jadwal-pembagian-rapor': {
+        title: 'Jadwal Pembagian Rapor Semester Genap & Tamatan Siswa',
+        category: 'Pengumuman',
+        date: '05 Juni 2026',
+        author: 'Kurikulum',
+        body: 'Diberitahukan kepada seluruh bapak/ibu orang tua/wali murid Wamena Adventist School, pembagian laporan hasil belajar siswa semester genap (Semester II) akan dilaksanakan pada tanggal 20 Juni 2026 bertempat di aula kapel sekolah. Diharapkan kehadiran orang tua/wali murid secara langsung untuk berdiskusi perkembangan murid.'
+      },
+      'ibadah-paduan-suara': {
+        title: 'Pelayanan Paduan Suara Siswa di Gereja Advent Jemaat Wamena Kota',
+        category: 'Kegiatan',
+        date: '24 Mei 2026',
+        author: 'Kerohanian',
+        body: 'Tim paduan suara siswa-siswi SMP membawakan persembahan pujian lagu-lagu rohani berharmoni merdu dalam ibadah Sabat bersama jemaat Wamena Kota. Pelayanan ini merupakan bagian penting pendidikan holistik untuk melatih rasa percaya diri siswa di hadapan umum sekaligus melayani sesama.'
+      }
+    };
+
+    function openNewsModal(key) {
+      const article = articlesData[key];
+      if (!article) return;
+      
+      const modal = document.getElementById('news-modal');
+      const content = document.getElementById('modal-content');
+      
+      content.innerHTML = `
+        <span class="bg-[#dbe1ff] text-[#00174a] text-[10px] font-bold px-2.5 py-1 rounded-full w-max uppercase">${article.category}</span>
+        <h2 class="text-2xl font-bold text-primary leading-snug">${article.title}</h2>
+        <div class="flex items-center gap-4 text-xs text-on-surface-variant border-b border-slate-100 pb-3">
+          <span>Oleh: <strong>${article.author}</strong></span>
+          <span>&bull;</span>
+          <span>Diterbitkan: <strong>${article.date}</strong></span>
+        </div>
+        <p class="text-sm text-on-surface-variant leading-relaxed pt-2">${article.body}</p>
+        <div class="mt-6 flex justify-end">
+          <button class="bg-[#00113a] text-white font-bold text-xs px-5 py-2.5 rounded-[8px]" onclick="closeNewsModal()">Tutup Halaman</button>
+        </div>
+      `;
+      
+      modal.classList.remove('hidden');
+    }
+
+    function closeNewsModal() {
+      const modal = document.getElementById('news-modal');
+      modal.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
